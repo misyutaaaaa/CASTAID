@@ -103,9 +103,11 @@ function startGacha() {
     }
     const randomImage = filteredImages[Math.floor(Math.random() * filteredImages.length)];
     const resultDiv = document.getElementById("gachaResult");
+    resultDiv.classList.add("result-display");
+    resultDiv.style.display = "block";
     resultDiv.innerHTML = `
         <p>レアリティ: ${chosenRarity}</p>
-        <img src="${URL.createObjectURL(randomImage.file)}" alt="ガチャ結果" style="max-width: 100px;">
+        <img src="${URL.createObjectURL(randomImage.file)}" alt="ガチャ結果">
     `;
 
     // 音楽を再生
